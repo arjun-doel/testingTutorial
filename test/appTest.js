@@ -6,20 +6,24 @@ sayHelloResult = app.sayHello()
 addNumbersResult = app.addNumbers(5,5)
 
 describe('App', function(){
-  it('app should return hello', function(){
-    assert.equal(sayHelloResult, 'hello');
+  describe('sayHello()', function(){
+    it('app should return hello', function(){
+      assert.equal(sayHelloResult, 'hello');
+    });
+  
+    it('sayHello should return type string', function() {
+      assert.typeOf(sayHelloResult, 'string');
+    });
   });
 
-  it('sayHello should return type string', function() {
-    assert.typeOf(sayHelloResult, 'string');
-  });
-
-  it('addNumbers should be above 5', function(){
-    assert.isAbove(addNumbersResult, 5);
-  });
-
-  it('addNumbers should return type number', function() {
-    assert.typeOf(addNumbersResult, 'Number');
+  describe('addNumbers()', function() {
+    it('addNumbers should be above 5', function(){
+      assert.isAbove(addNumbersResult, 5);
+    });
+  
+    it('addNumbers should return type number', function() {
+      assert.typeOf(addNumbersResult, 'Number');
+    });
   });
 
 });
